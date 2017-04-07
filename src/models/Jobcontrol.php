@@ -1,6 +1,6 @@
 <?php
 
-namespace namespace net\frenzel\jobcontrol\models;
+namespace net\frenzel\jobcontrol\models;
 
 use Yii;
 

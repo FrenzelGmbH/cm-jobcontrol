@@ -1,6 +1,6 @@
 <?php
 
-namespace namespace net\frenzel\jobcontrol\models\query;
+namespace net\frenzel\jobcontrol\models\query;
 
 /**
  * This is the ActiveQuery class for [[\app\models\Jobcontrol]].
