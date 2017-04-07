@@ -18,6 +18,25 @@ The prefered way to install this module is through composer.
 
 Either run
 
-´´´
+```
 php composer.phar require --prefer-dist frenzelgmbh/cm-jobcontrol "*"
-´´´
+```
+
+
+or add the following line to the require section of your composer.json
+
+```
+"frenzelgmbh/cm-jobcontrol":"*",
+```
+
+
+and within you web-config - modules, pls. add
+
+```
+    'modules' => [
+        'jobcontrol' => [
+            'class' => 'net\frenzel\jobcontrol',
+        ],
+        ...
+    ]
+```
