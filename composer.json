@@ -25,13 +25,14 @@
     "php": ">=5.5.0",
     "yiisoft/yii2": "^2.0.10",
     "tuyakhov/yii2-json-api" : "^0.1.1",
+    "raoul2000/yii2-workflow": "*"
   },
   "require-dev": {
     "codeception/codeception": "*"
   },
   "autoload": {
     "psr-4": {
-      "net\\frenzel\\jobcontrol\\": ""
+      "net\\frenzel\\jobcontrol\\": "src"
     }
   }
 }
