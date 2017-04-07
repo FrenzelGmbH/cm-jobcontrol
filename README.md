@@ -40,3 +40,9 @@ and within you web-config - modules, pls. add
         ...
     ]
 ```
+
+As the module needs to save some data, pls. execute the migrations under
+
+```
+ '@vendor/frenzelgmbh/cm-jobcontrol/src/migrations',
+ ```

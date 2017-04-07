@@ -9,8 +9,21 @@
 
 namespace net\frenzel\jobcontrol;
 
+use Yii;
+use yii\base\Action;
+use yii\web\ForbiddenHttpException;
+
 class Module extends \yii\base\Module
 {
+	/**
+	 * @inerhitdoc
+	 */
+	public $controllerNamespace = 'net\frenzel\jobcontrol\controllers';
+
+	/**
+	 * [init description]
+	 * @return [type] [description]
+	 */
 	public function init()
 	{
 		parent::init();
