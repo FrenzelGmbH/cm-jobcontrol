@@ -3,6 +3,8 @@
 namespace net\frenzel\jobcontrol\models;
 
 use Yii;
+use tuyakhov\jsonapi\ResourceTrait;
+use tuyakhov\jsonapi\ResourceInterface;
 
 /**
  * This is the model class for table "{{%net_frenzel_jobcontrol}}".
@@ -27,8 +29,10 @@ use Yii;
  * @property int $updated_at
  * @property int $deleted_at
  */
-class Jobcontrol extends \yii\db\ActiveRecord
+class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
 {
+    use ResourceTrait;
+    
     /**
      * @inheritdoc
      */
