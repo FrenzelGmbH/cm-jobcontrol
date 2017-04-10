@@ -26,7 +26,7 @@ php composer.phar require --prefer-dist frenzelgmbh/cm-jobcontrol "*"
 or add the following line to the require section of your composer.json
 
 ```
-"frenzelgmbh/cm-jobcontrol":"*",
+    "frenzelgmbh/cm-jobcontrol":"*",
 ```
 
 
@@ -41,8 +41,20 @@ and within you web-config - modules, pls. add
     ]
 ```
 
+and within you web-config - components, pls. add
+
+```
+    'components' => [
+        'JobcontrolWorkflow' => [
+            'class' => 'raoul2000\workflow\source\file\WorkflowFileSource',
+        ],
+        ...
+    ]
+```
+
+
 As the module needs to save some data, pls. execute the migrations under
 
 ```
- '@vendor/frenzelgmbh/cm-jobcontrol/src/migrations',
- ```
+    '@vendor/frenzelgmbh/cm-jobcontrol/src/migrations',
+```

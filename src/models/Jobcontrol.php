@@ -32,13 +32,28 @@ use tuyakhov\jsonapi\ResourceInterface;
 class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
 {
     use ResourceTrait;
-    
+
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%net_frenzel_jobcontrol}}';
+    }
+
+    /**
+     * @inerhitdoc
+     * @return [type] [description]
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \raoul2000\workflow\base\SimpleWorkflowBehavior::className(),
+                'statusAttribute' => 'status',
+                'source' => 'JobcontrolWorkflowSource'
+            ]
+        ];
     }
 
     /**
