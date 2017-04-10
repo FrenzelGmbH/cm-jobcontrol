@@ -31,4 +31,14 @@ class JobcontrolQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+    /**
+     * active will only return the none deleted records to the user
+     * @return [type] [description]
+     */
+    public function active()
+    {
+        $this->andWhere('{{%net_frenzel_jobcontrol}}.deleted_at IS NULL');
+        return $this;
+    }
 }

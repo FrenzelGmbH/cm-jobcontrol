@@ -41,7 +41,7 @@ class JobcontrolSearch extends Jobcontrol
      */
     public function search($params)
     {
-        $query = Jobcontrol::find();
+        $query = Jobcontrol::find()->active();
 
         // add conditions that should always apply here
 

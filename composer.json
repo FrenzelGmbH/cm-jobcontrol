@@ -25,7 +25,8 @@
     "php": ">=5.5.0",
     "yiisoft/yii2": "^2.0.10",
     "tuyakhov/yii2-json-api" : "^0.1.1",
-    "raoul2000/yii2-workflow": "*"
+    "raoul2000/yii2-workflow": "*",
+    "yii2tech/ar-softdelete": "*",
   },
   "require-dev": {
     "codeception/codeception": "*"

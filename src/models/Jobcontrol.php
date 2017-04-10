@@ -5,6 +5,9 @@ namespace net\frenzel\jobcontrol\models;
 use Yii;
 use tuyakhov\jsonapi\ResourceTrait;
 use tuyakhov\jsonapi\ResourceInterface;
+use yii\behaviors\TimestampBehavior;
+use yii\behaviors\BlameableBehavior;
+use yii2tech\ar\softdelete\SoftDeleteBehavior
 
 /**
  * This is the model class for table "{{%net_frenzel_jobcontrol}}".
@@ -52,7 +55,13 @@ class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
                 'class' => \raoul2000\workflow\base\SimpleWorkflowBehavior::className(),
                 'statusAttribute' => 'status',
                 'source' => 'JobcontrolWorkflowSource'
-            ]
+            ],
+            TimestampBehavior::className(),
+            BlameableBehavior::className(),
+            'softDeleteBehavior' => [
+                'class' => SoftDeleteBehavior::className(),
+                'replaceRegularDelete' => true // mutate native `delete()` method
+            ],
         ];
     }
 
@@ -62,7 +71,7 @@ class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
     public function rules()
     {
         return [
-            [['name', 'jobGroup', 'fireTime', 'created_by', 'updated_by', 'created_at', 'updated_at'], 'required'],
+            [['name', 'jobGroup', 'fireTime'], 'required'],
             [['fireInstance', 'fireTime', 'recovering', 'refireCount', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['jobDetail'], 'string'],
             [['jobRunTime'], 'safe'],
