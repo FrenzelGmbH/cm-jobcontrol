@@ -10,6 +10,7 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('jobcontrol', 'Jobcontrols');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="row">
 <div class="jobcontrol-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -50,4 +51,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <?php Pjax::end(); ?>
+</div>
 </div>
