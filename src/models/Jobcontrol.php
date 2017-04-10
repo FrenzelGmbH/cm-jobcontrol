@@ -115,4 +115,18 @@ class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
     {
         return new \net\frenzel\jobcontrol\models\query\JobcontrolQuery(get_called_class());
     }
+
+    /**
+     * [beforeSave description]
+     * @param  [type] $insert [description]
+     * @return [type]         [description]
+     */
+    public function beforeSave($insert)
+    {
+        if($insert)
+        {
+            $this->sendToStatus('init');
+        }
+        return parent::beforeSave($insert);
+    }
 }
