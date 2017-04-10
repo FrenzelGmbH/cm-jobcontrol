@@ -7,7 +7,7 @@ use tuyakhov\jsonapi\ResourceTrait;
 use tuyakhov\jsonapi\ResourceInterface;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
-use yii2tech\ar\softdelete\SoftDeleteBehavior
+use yii2tech\ar\softdelete\SoftDeleteBehavior;
 
 /**
  * This is the model class for table "{{%net_frenzel_jobcontrol}}".
