@@ -13,9 +13,16 @@ class JobcontrolWorkflow implements \raoul2000\workflow\source\file\IWorkflowDef
 		return [
 			'initialStatus' => 'init',
 			'status' => [
+				'start' => [
+					'transition' => ['finished', 'failed']
+				],
 				'finished' => [
-					'transition' => [],
+					'transition' => ['successfull', 'failed'],
+				],
+				'failed' => [
+					'transition' => ['start'], 
 				]
+				'successfull'
 			]
 		]
 	}

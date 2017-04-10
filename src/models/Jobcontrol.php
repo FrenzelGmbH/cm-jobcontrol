@@ -125,7 +125,7 @@ class Jobcontrol extends \yii\db\ActiveRecord implements ResourceInterface
     {
         if($insert)
         {
-            $this->sendToStatus('init');
+            $this->sendToStatus('JobcontrolWorkflow/init');
         }
         return parent::beforeSave($insert);
     }
